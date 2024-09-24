@@ -1,6 +1,8 @@
 import './index.css';
 import Employee from './components/employee';
 import { useState } from 'react';
+import AddEmployee from './components/AddEmployee';
+import {v4 as uuidv4} from 'uuid'
 
 function App() {
   const [role, setRole] = useState('Dev')
@@ -62,6 +64,15 @@ function updateEmployee(id,newName,newRole){
     })
     setEmployees(updatedEmployees)
 }
+function newEmployee(name, role, img){
+   const newEmployee = {
+    id: uuidv4(),
+    name: name,
+    role: role,
+    img: img,
+  }
+  setEmployees([...employees, newEmployee])
+}
 
   const showEmployees = true;
   return (
@@ -87,6 +98,8 @@ function updateEmployee(id,newName,newRole){
               
           })}
         </div>
+        <AddEmployee  
+          newEmployee = {newEmployee}/>
         </>
         : <p> You cannot see the Employees</p>
       }
