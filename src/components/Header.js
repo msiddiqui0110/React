@@ -2,10 +2,6 @@ import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
 } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
@@ -13,13 +9,9 @@ import { NavLink } from "react-router-dom";
 const navigation = [
   { name: "Employees", href: "/Employees"},
   { name: "Customers", href: "/Customers"},
-  { name: "Projects", href: "/others"},
-  { name: "Calendar", href: "/otherssss"},
+  { name: "Dictionary", href: "/Dictionary"},
+  { name: "Definition", href: "/Definition"},
 ];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export default function Header(props) {
   return (
@@ -99,7 +91,7 @@ export default function Header(props) {
         </DisclosurePanel>
       </Disclosure>
       <div className="bg-gray-300">
-        <div className="mx-auto min-h-screen px-2 py-2 max-w-7xl">
+        <div className="mx-auto min-h-screen px-3 py-2 max-w-7xl">
           {props.children}
         </div>
       </div>
